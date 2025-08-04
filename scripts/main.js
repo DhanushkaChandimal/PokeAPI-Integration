@@ -19,7 +19,7 @@ async function getPokemon(){
         if(txtName.value.trim() === "") throw new Error("Please enter ID or Name");
         const pokemon = await fetchPokemon(txtName.value);
         // console.log(pokemon);
-        const title = document.createElement("h3");
+        const title = document.createElement("h2");
         title.innerText = pokemon.name;
         container.appendChild(title);
         

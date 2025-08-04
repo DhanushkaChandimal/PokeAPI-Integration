@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <img id="logo" src="assets/logo.png" alt="Logo">
+    <h1>Search for Pokémon</h1>
     <form onsubmit="event.preventDefault(); getPokemon();">
-        <label for="pokemonName">Name or ID of a Pokemon</label>
+        <label for="pokemonName">Name or ID of a Pokémon</label>
         <input type="text" name="pokemonName" id="pokemonName" placeholder="Eg: 1">
         <input type="submit" value="Search">
         <div id="container"></div>

@@ -1,0 +1,25 @@
+body, form, #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: rgb(1, 17, 122);
+}
+
+h2{
+    text-transform: capitalize;
+}
+
+#logo{
+    width: 250px;
+}
+
+#pokemonName{
+    margin: 10px 0;
+}
+
+.errorMessage{
+    color: red;
+}
