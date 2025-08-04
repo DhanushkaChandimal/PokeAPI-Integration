@@ -5,10 +5,6 @@ async function fetchPokemon(name){
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     if (!response.ok) throw new Error("Can't fetch data. Invalid name or ID");
     const pokemon = await response.json();
-    // console.log(txtName.value);
-    // console.log(response);
-    // console.log(pokemon);
-    // console.log(pokemon.name);
     return await pokemon;
 }
 
@@ -17,8 +13,9 @@ async function getPokemon(){
 
     try{
         if(txtName.value.trim() === "") throw new Error("Please enter ID or Name");
+
         const pokemon = await fetchPokemon(txtName.value);
-        // console.log(pokemon);
+        
         const title = document.createElement("h2");
         title.innerText = pokemon.name;
         container.appendChild(title);
@@ -28,8 +25,6 @@ async function getPokemon(){
         image.alt = "Pokemon Image"
         container.appendChild(image);
         
-        // console.log(pokemon.types[0].type.name);
-        // console.log("Type: " + pokemon.types[0].type.name + (pokemon.types.length > 1 ? " and " + pokemon.types[1].type.name : ""))
         const type = document.createElement("p");
         type.innerText = "Type: "
         + pokemon.types[0].type.name
@@ -39,7 +34,6 @@ async function getPokemon(){
         const error = document.createElement("p");
         error.innerText = e;
         error.classList.add("errorMessage");
-        // console.log(e);
         container.appendChild(error);
     }
 }
